@@ -50,12 +50,20 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        earth: "hsl(var(--earth))",
-        sand: "hsl(var(--sand))",
-        terracotta: "hsl(var(--terracotta))",
-        stone: "hsl(var(--stone))",
-        sunset: "hsl(var(--sunset))",
-        mountain: "hsl(var(--mountain))",
+        pomegranate: {
+          DEFAULT: "hsl(var(--pomegranate))",
+          dark: "hsl(var(--pomegranate-dark))",
+          light: "hsl(var(--pomegranate-light))",
+        },
+        lapis: {
+          DEFAULT: "hsl(var(--lapis))",
+          dark: "hsl(var(--lapis-dark))",
+          light: "hsl(var(--lapis-light))",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          dark: "hsl(var(--gold-dark))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

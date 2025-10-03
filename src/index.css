@@ -8,96 +8,107 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 40 30% 95%;
-    --foreground: 25 40% 20%;
+    --background: 220 20% 98%;
+    --foreground: 220 30% 15%;
 
-    --card: 40 25% 98%;
-    --card-foreground: 25 40% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
 
-    --popover: 40 25% 98%;
-    --popover-foreground: 25 40% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
 
-    --primary: 25 45% 35%;
-    --primary-foreground: 40 30% 95%;
+    --primary: 220 70% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 40 35% 75%;
-    --secondary-foreground: 25 40% 20%;
+    --secondary: 350 75% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 30 15% 85%;
-    --muted-foreground: 25 25% 45%;
+    --muted: 220 20% 95%;
+    --muted-foreground: 220 20% 45%;
 
-    --accent: 12 55% 50%;
-    --accent-foreground: 40 30% 95%;
+    --accent: 350 75% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 70% 50%;
-    --destructive-foreground: 40 30% 95%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 30 20% 80%;
-    --input: 30 20% 80%;
-    --ring: 25 45% 35%;
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 220 70% 50%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
     
-    /* Custom tokens */
-    --earth: 25 45% 35%;
-    --sand: 40 35% 75%;
-    --terracotta: 12 55% 50%;
-    --stone: 30 15% 85%;
-    --sunset: 30 80% 60%;
-    --mountain: 120 20% 40%;
+    /* Custom tokens - Premium palette */
+    --pomegranate: 350 75% 50%;
+    --pomegranate-dark: 350 75% 40%;
+    --pomegranate-light: 350 75% 60%;
+    --lapis: 220 70% 50%;
+    --lapis-dark: 220 70% 40%;
+    --lapis-light: 220 70% 60%;
+    --gold: 45 100% 55%;
+    --gold-dark: 45 100% 45%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220, 70%, 50%) 0%, hsl(350, 75%, 50%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(350, 75%, 50%) 0%, hsl(220, 70%, 50%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45, 100%, 55%) 0%, hsl(350, 75%, 50%) 100%);
+    
+    /* Shadows */
+    --shadow-elegant: 0 20px 60px -15px hsl(220 70% 50% / 0.3);
+    --shadow-glow: 0 0 80px hsl(350 75% 50% / 0.2);
+    --shadow-card: 0 10px 40px -10px hsl(220 30% 15% / 0.1);
 
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-foreground: 220 30% 15%;
+    --sidebar-primary: 220 70% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 95%;
+    --sidebar-accent-foreground: 220 30% 15%;
+    --sidebar-border: 220 20% 90%;
+    --sidebar-ring: 220 70% 50%;
   }
 
   .dark {
-    --background: 25 30% 12%;
-    --foreground: 40 30% 95%;
+    --background: 220 30% 10%;
+    --foreground: 220 20% 95%;
 
-    --card: 25 25% 15%;
-    --card-foreground: 40 30% 95%;
+    --card: 220 25% 15%;
+    --card-foreground: 220 20% 95%;
 
-    --popover: 25 25% 15%;
-    --popover-foreground: 40 30% 95%;
+    --popover: 220 25% 15%;
+    --popover-foreground: 220 20% 95%;
 
-    --primary: 40 30% 95%;
-    --primary-foreground: 25 45% 35%;
+    --primary: 220 70% 55%;
+    --primary-foreground: 220 30% 10%;
 
-    --secondary: 25 35% 25%;
-    --secondary-foreground: 40 30% 95%;
+    --secondary: 350 75% 55%;
+    --secondary-foreground: 220 30% 10%;
 
-    --muted: 25 20% 25%;
-    --muted-foreground: 30 15% 65%;
+    --muted: 220 20% 25%;
+    --muted-foreground: 220 20% 65%;
 
-    --accent: 12 55% 50%;
-    --accent-foreground: 40 30% 95%;
+    --accent: 350 75% 55%;
+    --accent-foreground: 220 30% 10%;
 
     --destructive: 0 70% 50%;
-    --destructive-foreground: 40 30% 95%;
+    --destructive-foreground: 220 20% 95%;
 
-    --border: 25 20% 25%;
-    --input: 25 20% 25%;
-    --ring: 40 30% 95%;
+    --border: 220 20% 25%;
+    --input: 220 20% 25%;
+    --ring: 220 70% 55%;
     
-    --earth: 25 45% 35%;
-    --sand: 40 35% 75%;
-    --terracotta: 12 55% 50%;
-    --stone: 30 15% 85%;
-    --sunset: 30 80% 60%;
-    --mountain: 120 20% 40%;
+    --pomegranate: 350 75% 55%;
+    --pomegranate-dark: 350 75% 45%;
+    --pomegranate-light: 350 75% 65%;
+    --lapis: 220 70% 55%;
+    --lapis-dark: 220 70% 45%;
+    --lapis-light: 220 70% 65%;
+    --gold: 45 100% 60%;
+    --gold-dark: 45 100% 50%;
+    
+    --shadow-elegant: 0 20px 60px -15px hsl(220 70% 55% / 0.4);
+    --shadow-glow: 0 0 80px hsl(350 75% 55% / 0.3);
+    --shadow-card: 0 10px 40px -10px hsl(0 0% 0% / 0.5);
   }
 }
 
