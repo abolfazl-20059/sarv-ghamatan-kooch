@@ -17,6 +17,7 @@ interface TribePageProps {
   tribeNameEnglish: string;
   subClans?: string[];
   description?: string;
+  galleryImages?: string[];
 }
 
 const sections = [
@@ -56,12 +57,13 @@ export default function TribePage({
   tribeName, 
   tribeNameEnglish, 
   subClans,
-  description 
+  description,
+  galleryImages = []
 }: TribePageProps) {
   return (
     <div className="animate-in fade-in duration-500">
       {/* Hero Section */}
-      <section className="relative py-12 md:py-20 bg-gradient-to-b from-primary to-earth overflow-hidden">
+      <section className="relative py-12 md:py-20 bg-primary overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20" />
         
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -147,14 +149,29 @@ export default function TribePage({
                     تصاویر و ویدیوهای مستند از زندگی، فرهنگ و سنت‌های این ایل.
                   </p>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3 pt-2">
-                    {[1, 2, 3].map((i) => (
-                      <div 
-                        key={i}
-                        className="aspect-square bg-muted/50 rounded-lg flex items-center justify-center"
-                      >
-                        <ImageIcon className="h-8 w-8 text-muted-foreground/40" />
-                      </div>
-                    ))}
+                    {galleryImages.length > 0 ? (
+                      galleryImages.map((image, i) => (
+                        <div 
+                          key={i}
+                          className="aspect-square rounded-lg overflow-hidden"
+                        >
+                          <img 
+                            src={image} 
+                            alt={`${tribeName} - تصویر ${i + 1}`}
+                            className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                          />
+                        </div>
+                      ))
+                    ) : (
+                      [1, 2, 3].map((i) => (
+                        <div 
+                          key={i}
+                          className="aspect-square bg-muted/50 rounded-lg flex items-center justify-center"
+                        >
+                          <ImageIcon className="h-8 w-8 text-muted-foreground/40" />
+                        </div>
+                      ))
+                    )}
                   </div>
                 </div>
               </div>
