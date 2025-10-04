@@ -32,7 +32,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             variant="ghost"
             size="icon"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 rounded-xl"
+            className="text-white hover:bg-white/20 hover:scale-105 transition-all duration-300 rounded-xl"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
@@ -77,7 +77,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 page-transition-enter">{children}</main>
 
       {/* Footer */}
       <footer className="bg-primary text-white border-t border-white/10">
@@ -94,7 +94,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 font-bold transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 font-bold transition-all duration-300 hover:scale-[1.02]"
             >
               تماس / مشارکت
             </Link>
@@ -109,7 +109,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             to="/"
             className={`flex flex-col items-center justify-center py-3 rounded-xl font-bold transition-all duration-300 ${
               location.pathname === "/"
-                ? "bg-primary text-primary-foreground shadow-lg scale-105"
+                ? "bg-primary text-primary-foreground shadow-lg scale-[1.02]"
                 : "text-muted-foreground hover:bg-muted"
             }`}
           >
@@ -118,7 +118,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Link>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex flex-col items-center justify-center py-3 rounded-xl font-bold transition-all duration-300 text-muted-foreground hover:bg-muted hover:scale-105"
+            className="flex flex-col items-center justify-center py-3 rounded-xl font-bold transition-all duration-300 text-muted-foreground hover:bg-muted hover:scale-[1.01]"
           >
             <Users className="h-5 w-5 mb-1" />
             <span className="text-xs">ایلات</span>

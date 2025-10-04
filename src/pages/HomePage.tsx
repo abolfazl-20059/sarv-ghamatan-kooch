@@ -101,7 +101,7 @@ export default function HomePage() {
               <Button 
                 asChild 
                 size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-7 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-105"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-10 py-7 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-[1.02]"
               >
                 <a href="#tribes">آشنایی با ایلات</a>
               </Button>
@@ -109,7 +109,7 @@ export default function HomePage() {
                 asChild 
                 variant="outline"
                 size="lg"
-                className="border-2 border-white/40 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-bold text-lg px-10 py-7 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105"
+                className="border-2 border-white/40 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-bold text-lg px-10 py-7 rounded-2xl shadow-xl transition-all duration-300 hover:scale-[1.02]"
               >
                 <Link to="/contact">همکاری با ما</Link>
               </Button>
@@ -135,11 +135,11 @@ export default function HomePage() {
             {features.map((feature, index) => (
               <Card 
                 key={index}
-                className="group p-8 hover:shadow-[var(--shadow-elegant)] transition-all duration-500 border-border bg-card hover:scale-105 hover:-translate-y-2"
+                className="group p-8 hover:shadow-[var(--shadow-elegant)] transition-all duration-500 border-border bg-card hover:scale-[1.01] hover:-translate-y-1"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="p-5 rounded-2xl bg-primary shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                  <div className="p-5 rounded-2xl bg-primary shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
                     <feature.icon className="h-8 w-8 text-primary-foreground" />
                   </div>
                   <h3 className="font-black text-2xl text-card-foreground">{feature.title}</h3>
@@ -170,12 +170,12 @@ export default function HomePage() {
             {tribes.map((tribe, index) => (
               <Card 
                 key={index}
-                className="group overflow-hidden hover:shadow-[var(--shadow-elegant)] transition-all duration-500 border-2 hover:border-primary/50 bg-card hover:scale-105 hover:-translate-y-3"
+                className="group overflow-hidden hover:shadow-[var(--shadow-elegant)] transition-all duration-500 border-2 hover:border-primary/50 bg-card hover:scale-[1.01] hover:-translate-y-1"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="relative h-56 overflow-hidden">
                   <div 
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                     style={{ backgroundImage: `url(${tribe.image})` }}
                   >
                     <div className="absolute inset-0 bg-black/40" />
@@ -221,7 +221,7 @@ export default function HomePage() {
               <Button 
                 asChild 
                 size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-12 py-7 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-105"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-12 py-7 rounded-2xl shadow-2xl transition-all duration-300 hover:scale-[1.02]"
               >
                 <Link to="/contact">همکاری با ما</Link>
               </Button>
