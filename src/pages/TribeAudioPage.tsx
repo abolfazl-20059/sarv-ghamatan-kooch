@@ -1,7 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mic, Play } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Mic, Play } from "lucide-react";
 
 interface TribeAudioPageProps {
   tribeName: string;
@@ -76,16 +75,6 @@ export default function TribeAudioPage({
       <section className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto space-y-6">
-            <Link to={`/tribe/${tribeNameEnglish}`}>
-              <Button 
-                variant="ghost"
-                className="mb-6 hover:bg-muted"
-              >
-                <ArrowRight className="ml-2 h-4 w-4" />
-                بازگشت به صفحه ایل
-              </Button>
-            </Link>
-
             <Card className="p-6 md:p-8 border-border bg-card">
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
                 مجموعه روایت‌های شفاهی ریش‌سفیدان و داستان‌های زندگی عشایری ایل {tribeName} که میراث فرهنگی این قوم را به نسل‌های آینده منتقل می‌کند.

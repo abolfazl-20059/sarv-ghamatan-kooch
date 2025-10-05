@@ -24,12 +24,6 @@ interface TribePageProps {
 
 const sections = [
   { 
-    id: "history", 
-    title: "تاریخچه و ریشه", 
-    icon: History,
-    content: "تاریخچه و ریشه‌های این ایل در این بخش قرار خواهد گرفت. اطلاعات جامع درباره منشأ، مهاجرت‌ها و تحولات تاریخی این قوم."
-  },
-  { 
     id: "migration", 
     title: "نقشه و مسیر کوچ (ییلاق و قشلاق)", 
     icon: Map,
@@ -128,6 +122,25 @@ export default function TribePage({
       <section className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto space-y-4">
+            {/* History Section - Separate Page */}
+            <Link to={`/tribe/${tribeNameEnglish}/history`}>
+              <Card className="p-6 md:p-8 border-border bg-card hover:shadow-lg transition-all duration-300 hover:scale-[1.005] cursor-pointer">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-accent/10 flex-shrink-0">
+                    <History className="h-6 w-6 text-accent" />
+                  </div>
+                  <div className="flex-1 space-y-3">
+                    <h3 className="text-xl md:text-2xl font-bold text-card-foreground">
+                      تاریخچه و ریشه
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      تاریخچه و ریشه‌های این ایل در این بخش قرار خواهد گرفت. اطلاعات جامع درباره منشأ، مهاجرت‌ها و تحولات تاریخی این قوم.
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            </Link>
+
             {sections.map((section) => {
               const Icon = section.icon;
               return (

@@ -1,7 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, ImageIcon } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ImageIcon } from "lucide-react";
 
 interface TribeGalleryPageProps {
   tribeName: string;
@@ -55,16 +53,6 @@ export default function TribeGalleryPage({
       <section className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto space-y-6">
-            <Link to={`/tribe/${tribeNameEnglish}`}>
-              <Button 
-                variant="ghost"
-                className="mb-6 hover:bg-muted"
-              >
-                <ArrowRight className="ml-2 h-4 w-4" />
-                بازگشت به صفحه ایل
-              </Button>
-            </Link>
-
             <Card className="p-6 md:p-8 border-border bg-card">
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
                 مجموعه تصاویر مستند از زندگی، فرهنگ و سنت‌های ایل {tribeName} که داستان‌های بصری از میراث فرهنگی و زندگی روزمره این قوم را بازگو می‌کند.

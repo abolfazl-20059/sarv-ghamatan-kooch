@@ -1,7 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, LucideIcon } from "lucide-react";
-import { Link } from "react-router-dom";
+import { LucideIcon } from "lucide-react";
 
 interface TribeSectionPageProps {
   tribeName: string;
@@ -59,16 +57,6 @@ export default function TribeSectionPage({
       <section className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto space-y-6">
-            <Link to={`/tribe/${tribeNameEnglish}`}>
-              <Button 
-                variant="ghost"
-                className="mb-6 hover:bg-muted"
-              >
-                <ArrowRight className="ml-2 h-4 w-4" />
-                بازگشت به صفحه ایل
-              </Button>
-            </Link>
-
             <Card className="p-6 md:p-8 border-border bg-card">
               <div className="prose prose-lg max-w-none text-card-foreground">
                 <p className="leading-relaxed text-lg whitespace-pre-line">

@@ -14,6 +14,7 @@ import Tajik from "./pages/tribes/Tajik";
 import TribeSectionPage from "./pages/tribes/TribeSectionPage";
 import TribeGalleryPage from "./pages/tribes/TribeGalleryPage";
 import TribeAudioPage from "./pages/tribes/TribeAudioPage";
+import TribeHistoryPage from "./pages/tribes/TribeHistoryPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/tribe/koti" element={<Layout><Koti /></Layout>} />
           <Route path="/tribe/hadavand" element={<Layout><Hadavand /></Layout>} />
           <Route path="/tribe/tajik" element={<Layout><Tajik /></Layout>} />
+          <Route path="/tribe/:tribeName/history" element={<Layout><TribeHistoryPage /></Layout>} />
           <Route path="/tribe/:tribeName/gallery" element={<Layout><TribeGalleryPage /></Layout>} />
           <Route path="/tribe/:tribeName/audio" element={<Layout><TribeAudioPage /></Layout>} />
           <Route path="/tribe/:tribeName/:sectionId" element={<Layout><TribeSectionPage /></Layout>} />

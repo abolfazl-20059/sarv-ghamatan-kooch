@@ -1,25 +1,13 @@
-import { Home, Users, Menu, X, Heart } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
-import { Button } from "./ui/button";
-
-const tribes = [
-  { name: "عرب صحنه‌ای", path: "/tribe/arab-sahnaei" },
-  { name: "کلخی", path: "/tribe/kalkhohi" },
-  { name: "کوتی", path: "/tribe/koti" },
-  { name: "هدوند", path: "/tribe/hadavand" },
-  { name: "تاجیک", path: "/tribe/tajik" },
-];
+import { Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-primary shadow-[var(--shadow-elegant)] backdrop-blur-sm border-b border-white/10">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-center">
           <Link to="/" className="flex items-center gap-3">
             <div className="p-2 rounded-xl bg-white/20 backdrop-blur-sm">
               <Heart className="h-6 w-6 text-white" fill="white" />
@@ -28,52 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               سروقامتان کوچ
             </span>
           </Link>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-white hover:bg-white/20 hover:scale-105 transition-all duration-300 rounded-xl"
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="bg-card/98 backdrop-blur-xl border-t border-border shadow-2xl animate-in slide-in-from-top duration-300">
-            <nav className="container mx-auto px-4 py-6 space-y-2">
-              <Link
-                to="/"
-                onClick={() => setIsMenuOpen(false)}
-                className={`flex items-center gap-3 py-3 px-5 rounded-xl font-bold transition-all duration-300 ${
-                  location.pathname === "/"
-                    ? "bg-primary text-primary-foreground shadow-lg"
-                    : "text-foreground hover:bg-muted"
-                }`}
-              >
-                <Home className="h-5 w-5" />
-                صفحه اصلی
-              </Link>
-              <div className="text-muted-foreground text-sm font-black px-5 pt-4 pb-2">
-                ایلات عشایری
-              </div>
-              {tribes.map((tribe) => (
-                <Link
-                  key={tribe.path}
-                  to={tribe.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block py-3 px-5 rounded-xl font-bold transition-all duration-300 ${
-                    location.pathname === tribe.path
-                      ? "bg-accent text-accent-foreground shadow-lg"
-                      : "text-foreground hover:bg-muted"
-                  }`}
-                >
-                  {tribe.name}
-                </Link>
-              ))}
-            </nav>
-          </div>
-        )}
       </header>
 
       {/* Main Content */}
@@ -101,33 +44,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </footer>
-
-      {/* Bottom Navigation - Mobile Only */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-card/95 backdrop-blur-xl border-t border-border z-40 shadow-2xl">
-        <div className="grid grid-cols-2 gap-2 p-3">
-          <Link
-            to="/"
-            className={`flex flex-col items-center justify-center py-3 rounded-xl font-bold transition-all duration-300 ${
-              location.pathname === "/"
-                ? "bg-primary text-primary-foreground shadow-lg scale-[1.02]"
-                : "text-muted-foreground hover:bg-muted"
-            }`}
-          >
-            <Home className="h-5 w-5 mb-1" />
-            <span className="text-xs">خانه</span>
-          </Link>
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex flex-col items-center justify-center py-3 rounded-xl font-bold transition-all duration-300 text-muted-foreground hover:bg-muted hover:scale-[1.01]"
-          >
-            <Users className="h-5 w-5 mb-1" />
-            <span className="text-xs">ایلات</span>
-          </button>
-        </div>
-      </nav>
-      
-      {/* Bottom padding for mobile nav */}
-      <div className="h-20 md:hidden" />
     </div>
   );
 }
