@@ -127,7 +127,7 @@ export default function TribePage({
       {/* Content Sections */}
       <section className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="max-w-4xl mx-auto space-y-4">
             {sections.map((section) => {
               const Icon = section.icon;
               return (
@@ -136,7 +136,7 @@ export default function TribePage({
                   to={`/tribe/${tribeNameEnglish}/${section.id}`}
                 >
                   <Card 
-                    className="p-6 md:p-8 border-border bg-card hover:shadow-lg transition-all duration-300 hover:scale-[1.01] cursor-pointer"
+                    className="p-6 md:p-8 border-border bg-card hover:shadow-lg transition-all duration-300 hover:scale-[1.005] cursor-pointer"
                   >
                     <div className="flex items-start gap-4">
                       <div className="p-3 rounded-full bg-accent/10 flex-shrink-0">
@@ -157,70 +157,42 @@ export default function TribePage({
             })}
 
             {/* Gallery Section */}
-            <Card className="p-6 md:p-8 border-border bg-card">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-accent/10 flex-shrink-0">
-                  <ImageIcon className="h-6 w-6 text-accent" />
-                </div>
-                <div className="flex-1 space-y-4">
-                  <h3 className="text-xl md:text-2xl font-bold text-card-foreground">
-                    بخش گالری
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    تصاویر و ویدیوهای مستند از زندگی، فرهنگ و سنت‌های این ایل.
-                  </p>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3 pt-2">
-                    {galleryImages.length > 0 ? (
-                      galleryImages.map((image, i) => (
-                        <div 
-                          key={i}
-                          className="aspect-square rounded-lg overflow-hidden"
-                        >
-                          <img 
-                            src={image} 
-                            alt={`${tribeName} - تصویر ${i + 1}`}
-                            className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                          />
-                        </div>
-                      ))
-                    ) : (
-                      [1, 2, 3].map((i) => (
-                        <div 
-                          key={i}
-                          className="aspect-square bg-muted/50 rounded-lg flex items-center justify-center"
-                        >
-                          <ImageIcon className="h-8 w-8 text-muted-foreground/40" />
-                        </div>
-                      ))
-                    )}
+            <Link to={`/tribe/${tribeNameEnglish}/gallery`}>
+              <Card className="p-6 md:p-8 border-border bg-card hover:shadow-lg transition-all duration-300 hover:scale-[1.005] cursor-pointer">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-accent/10 flex-shrink-0">
+                    <ImageIcon className="h-6 w-6 text-accent" />
+                  </div>
+                  <div className="flex-1 space-y-3">
+                    <h3 className="text-xl md:text-2xl font-bold text-card-foreground">
+                      بخش گالری
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      تصاویر و ویدیوهای مستند از زندگی، فرهنگ و سنت‌های این ایل.
+                    </p>
                   </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </Link>
 
             {/* Audio Narratives Section */}
-            <Card className="p-6 md:p-8 border-border bg-card">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-accent/10 flex-shrink-0">
-                  <Mic className="h-6 w-6 text-accent" />
+            <Link to={`/tribe/${tribeNameEnglish}/audio`}>
+              <Card className="p-6 md:p-8 border-border bg-card hover:shadow-lg transition-all duration-300 hover:scale-[1.005] cursor-pointer">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-accent/10 flex-shrink-0">
+                    <Mic className="h-6 w-6 text-accent" />
+                  </div>
+                  <div className="flex-1 space-y-3">
+                    <h3 className="text-xl md:text-2xl font-bold text-card-foreground">
+                      روایت‌های صوتی
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      روایت‌های شفاهی ریش‌سفیدان و داستان‌های زندگی عشایری.
+                    </p>
+                  </div>
                 </div>
-                <div className="flex-1 space-y-4">
-                  <h3 className="text-xl md:text-2xl font-bold text-card-foreground">
-                    روایت‌های صوتی
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    روایت‌های شفاهی ریش‌سفیدان و داستان‌های زندگی عشایری.
-                  </p>
-                  <Button 
-                    variant="outline" 
-                    className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-                  >
-                    <Mic className="ml-2 h-4 w-4" />
-                    پخش روایت‌ها (به زودی)
-                  </Button>
-                </div>
-              </div>
-            </Card>
+              </Card>
+            </Link>
 
             {/* Genealogy Section */}
             <Card className="p-6 md:p-8 border-border bg-card">

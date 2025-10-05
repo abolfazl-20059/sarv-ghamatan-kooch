@@ -1,0 +1,52 @@
+import { useParams, Navigate } from "react-router-dom";
+import TribeAudioPageComponent from "../TribeAudioPage";
+import arabSahnaeiCard from "@/assets/tribes/arab-sahnaei-card.jpg";
+import kalkohiCard from "@/assets/tribes/kalkohi-card.jpg";
+import kotiCard from "@/assets/tribes/koti-card.jpg";
+import hadavandCard from "@/assets/tribes/hadavand-card.jpg";
+import tajikCard from "@/assets/tribes/tajik-card.jpg";
+
+const tribesConfig = {
+  "arab-sahnaei": {
+    name: "عرب صحنه‌ای",
+    cardImage: arabSahnaeiCard,
+  },
+  "kalkhohi": {
+    name: "کلخی",
+    cardImage: kalkohiCard,
+  },
+  "koti": {
+    name: "کوتی",
+    cardImage: kotiCard,
+  },
+  "hadavand": {
+    name: "هدوند",
+    cardImage: hadavandCard,
+  },
+  "tajik": {
+    name: "تاجیک",
+    cardImage: tajikCard,
+  },
+};
+
+export default function TribeAudioPage() {
+  const { tribeName } = useParams<{ tribeName: string }>();
+
+  if (!tribeName) {
+    return <Navigate to="/" replace />;
+  }
+
+  const tribeConfig = tribesConfig[tribeName as keyof typeof tribesConfig];
+
+  if (!tribeConfig) {
+    return <Navigate to="/" replace />;
+  }
+
+  return (
+    <TribeAudioPageComponent
+      tribeName={tribeConfig.name}
+      tribeNameEnglish={tribeName}
+      cardImage={tribeConfig.cardImage}
+    />
+  );
+}

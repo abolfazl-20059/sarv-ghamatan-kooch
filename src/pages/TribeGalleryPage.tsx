@@ -1,25 +1,21 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, LucideIcon } from "lucide-react";
+import { ArrowRight, ImageIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
-interface TribeSectionPageProps {
+interface TribeGalleryPageProps {
   tribeName: string;
   tribeNameEnglish: string;
-  sectionTitle: string;
-  sectionIcon: LucideIcon;
-  content: string;
+  galleryImages: string[];
   cardImage?: string;
 }
 
-export default function TribeSectionPage({ 
+export default function TribeGalleryPage({ 
   tribeName,
   tribeNameEnglish,
-  sectionTitle,
-  sectionIcon: Icon,
-  content,
+  galleryImages,
   cardImage
-}: TribeSectionPageProps) {
+}: TribeGalleryPageProps) {
   return (
     <div className="animate-in fade-in duration-500">
       {/* Hero Section */}
@@ -43,10 +39,10 @@ export default function TribeSectionPage({
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-3xl mx-auto space-y-4">
             <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-md inline-flex mx-auto mb-4">
-              <Icon className="h-12 w-12 text-primary-foreground" />
+              <ImageIcon className="h-12 w-12 text-primary-foreground" />
             </div>
             <h1 className="text-3xl md:text-5xl font-bold text-primary-foreground">
-              {sectionTitle}
+              بخش گالری
             </h1>
             <p className="text-xl text-primary-foreground/90">
               ایل {tribeName}
@@ -55,10 +51,10 @@ export default function TribeSectionPage({
         </div>
       </section>
 
-      {/* Content Section */}
+      {/* Gallery Content */}
       <section className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="max-w-6xl mx-auto space-y-6">
             <Link to={`/tribe/${tribeNameEnglish}`}>
               <Button 
                 variant="ghost"
@@ -70,10 +66,23 @@ export default function TribeSectionPage({
             </Link>
 
             <Card className="p-6 md:p-8 border-border bg-card">
-              <div className="prose prose-lg max-w-none text-card-foreground">
-                <p className="leading-relaxed text-lg whitespace-pre-line">
-                  {content}
-                </p>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+                مجموعه تصاویر مستند از زندگی، فرهنگ و سنت‌های ایل {tribeName} که داستان‌های بصری از میراث فرهنگی و زندگی روزمره این قوم را بازگو می‌کند.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {galleryImages.map((image, i) => (
+                  <div 
+                    key={i}
+                    className="aspect-square rounded-lg overflow-hidden bg-muted/30"
+                  >
+                    <img 
+                      src={image} 
+                      alt={`${tribeName} - تصویر ${i + 1}`}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                ))}
               </div>
             </Card>
           </div>
